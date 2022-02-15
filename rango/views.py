@@ -16,7 +16,9 @@ def index(request):
     return render(request, 'rango/index.html', context=context_dict)
     return HttpResponse("<a href='/rango/about/'>About</a> Rango says hey there partner!")
 def about(request):
-    return render(request, 'rango/about.html')
+    print(request.method)
+    print(request.user)
+    return render(request, 'rango/about.html', {})
     return HttpResponse(" <a href='/rango/'>Index</a> Rango says here is the about page.")
 def show_category(request, category_name_slug):
     context_dict = {}
